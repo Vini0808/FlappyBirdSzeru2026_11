@@ -8,7 +8,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace FlappyBirdSzeru2026_11
 {
@@ -17,6 +16,7 @@ namespace FlappyBirdSzeru2026_11
     /// </summary>
     public partial class MainWindow : Window
     {
+<<<<<<< HEAD
         private DispatcherTimer gameTimer = new DispatcherTimer();
         private Random rnd = new Random();
         public MainWindow()
@@ -31,6 +31,11 @@ namespace FlappyBirdSzeru2026_11
         {
             Moving moving = new Moving();
             moving.PipeMoving();
+=======
+        public MainWindow()
+        {
+            InitializeComponent();
+>>>>>>> parent of a0de085 (moving pipe)
         }
     }
 }
