@@ -22,16 +22,17 @@ namespace FlappyBirdSzeru2026_11
         public MainWindow()
         {
             InitializeComponent();
-            gameTimer.Interval = TimeSpan.FromMilliseconds(16);
-            gameTimer.Tick += GameLoop;
-            gameTimer.Start();
+            //gameTimer.Interval = TimeSpan.FromMilliseconds(16);
+            //gameTimer.Tick += GameLoop;
+            //gameTimer.Start();
+            CompositionTarget.Rendering += GameLoop;
         }
 
         private void GameLoop(object sender, EventArgs e)
         {
             Moving moving = new Moving();
             moving.PipeMoving(GameCanvas, PipeTop, PipeBottom);
-            moving.BirdMoving(GameCanvas, Bird, 5);
+            moving.BirdMoving(GameCanvas, Bird, 3);
             moving.IsColliding(Bird, PipeTop, PipeBottom);
         }
     }

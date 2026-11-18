@@ -10,7 +10,7 @@ namespace FlappyBirdSzeru2026_11
 {
     internal class Moving
     {
-        private double pipeSpeed = 5;
+        private double pipeSpeed = 3;
         private Random rnd = new Random();
         internal void PipeMoving(Canvas canvas, Rectangle pipeTop, Rectangle pipeBottom)
         {
@@ -28,7 +28,6 @@ namespace FlappyBirdSzeru2026_11
             Canvas.SetLeft(pipeTop, x);
             Canvas.SetLeft(pipeBottom, x);
         }
-
         internal void BirdMoving(Canvas canvas, Rectangle bird, double gravity)
         {
             double y = Canvas.GetTop(bird) + gravity;
@@ -41,9 +40,9 @@ namespace FlappyBirdSzeru2026_11
                 y = canvas.ActualHeight - bird.Height;
             }
 
-            if (Keyboard.IsKeyDown(Key.Space))
+            if (Keyboard.IsKeyDown(Key.Space) || Keyboard.IsKeyDown(Key.Up) || Keyboard.IsKeyDown(Key.W) || Keyboard.IsKeyDown(Key.Enter))
             {
-                y -= 20; // Move the bird up when space is pressed
+                y -= 15;
             }
             Canvas.SetTop(bird, y);
         }
