@@ -28,7 +28,7 @@ namespace FlappyBirdSzeru2026_11
             Canvas.SetLeft(pipeTop, x);
             Canvas.SetLeft(pipeBottom, x);
         }
-        internal void BirdMovingUp(Canvas canvas, Rectangle bird, double gravity)
+        internal void BirdMovingY(Canvas canvas, Rectangle bird, double gravity)
         {
             double y = Canvas.GetTop(bird) + gravity;
             if (y < 0)
@@ -43,11 +43,14 @@ namespace FlappyBirdSzeru2026_11
             if (Keyboard.IsKeyDown(Key.Space) || Keyboard.IsKeyDown(Key.Up) || Keyboard.IsKeyDown(Key.W) || Keyboard.IsKeyDown(Key.Enter))
             {
                 y -= 10;
+            } else if (Keyboard.IsKeyDown(Key.Down) || Keyboard.IsKeyDown(Key.S))
+            {
+                y += 5;
             }
             Canvas.SetTop(bird, y);
         }
 
-        internal void BirdMovingAround(Canvas canvas, Rectangle bird)
+        internal void BirdMovingX(Canvas canvas, Rectangle bird)
         {
             double x = Canvas.GetLeft(bird);
 
