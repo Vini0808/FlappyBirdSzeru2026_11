@@ -22,7 +22,7 @@ namespace FlappyBirdSzeru2026_11
                 double gapY = rnd.Next(50, 250);
                 pipeTop.Height = gapY;
                 Canvas.SetTop(pipeBottom, gapY + 150);
-                pipeBottom.Height = canvas.ActualHeight - (gapY + 150);
+                pipeBottom.Height = canvas.ActualHeight - (gapY + 100);
             }
 
             Canvas.SetLeft(pipeTop, x);
@@ -64,9 +64,9 @@ namespace FlappyBirdSzeru2026_11
 
         internal void IsColliding(Rectangle bird, Rectangle pipeTop, Rectangle pipeBottom)
         {
-            Rect birdRect = new Rect(Canvas.GetLeft(bird), Canvas.GetTop(bird), bird.Width, bird.Height);
-            Rect pipeTopRect = new Rect(Canvas.GetLeft(pipeTop), Canvas.GetTop(pipeTop), pipeTop.Width, pipeTop.Height);
-            Rect pipeBottomRect = new Rect(Canvas.GetLeft(pipeBottom), Canvas.GetTop(pipeBottom), pipeBottom.Width, pipeBottom.Height);
+            Rect birdRect = new Rect(Canvas.GetLeft(bird), Canvas.GetTop(bird), bird.Width - 5, bird.Height - 5);
+            Rect pipeTopRect = new Rect(Canvas.GetLeft(pipeTop), Canvas.GetTop(pipeTop), pipeTop.Width - 5, pipeTop.Height - 5);
+            Rect pipeBottomRect = new Rect(Canvas.GetLeft(pipeBottom), Canvas.GetTop(pipeBottom), pipeBottom.Width - 5, pipeBottom.Height - 5);
 
             if (birdRect.IntersectsWith(pipeTopRect) || birdRect.IntersectsWith(pipeBottomRect))
             {

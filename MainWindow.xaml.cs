@@ -18,13 +18,9 @@ namespace FlappyBirdSzeru2026_11
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer gameTimer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
-            //gameTimer.Interval = TimeSpan.FromMilliseconds(16);
-            //gameTimer.Tick += GameLoop;
-            //gameTimer.Start();
             CompositionTarget.Rendering += GameLoop;
         }
 
