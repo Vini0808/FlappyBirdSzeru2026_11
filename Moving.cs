@@ -10,7 +10,7 @@ namespace FlappyBirdSzeru2026_11
 {
     internal class Moving
     {
-        private double pipeSpeed = 3;
+        private double pipeSpeed = 4;
         private Random rnd = new Random();
         internal void PipeMoving(Canvas canvas, Rectangle pipeTop, Rectangle pipeBottom)
         {
@@ -28,7 +28,7 @@ namespace FlappyBirdSzeru2026_11
             Canvas.SetLeft(pipeTop, x);
             Canvas.SetLeft(pipeBottom, x);
         }
-        internal void BirdMoving(Canvas canvas, Rectangle bird, double gravity)
+        internal void BirdMovingUp(Canvas canvas, Rectangle bird, double gravity)
         {
             double y = Canvas.GetTop(bird) + gravity;
             if (y < 0)
@@ -42,9 +42,24 @@ namespace FlappyBirdSzeru2026_11
 
             if (Keyboard.IsKeyDown(Key.Space) || Keyboard.IsKeyDown(Key.Up) || Keyboard.IsKeyDown(Key.W) || Keyboard.IsKeyDown(Key.Enter))
             {
-                y -= 15;
+                y -= 10;
             }
             Canvas.SetTop(bird, y);
+        }
+
+        internal void BirdMovingAround(Canvas canvas, Rectangle bird)
+        {
+            double x = Canvas.GetLeft(bird);
+
+            if (Keyboard.IsKeyDown(Key.Left) || Keyboard.IsKeyDown(Key.A))
+            {
+                x -= 5;
+            }
+            else if (Keyboard.IsKeyDown(Key.Right) || Keyboard.IsKeyDown(Key.D))
+            {
+                x += 5;
+            }
+            Canvas.SetLeft(bird, x);
         }
 
         internal void IsColliding(Rectangle bird, Rectangle pipeTop, Rectangle pipeBottom)
