@@ -31,6 +31,8 @@ namespace FlappyBirdSzeru2026_11
         {
             Moving moving = new Moving();
             moving.PipeMoving(GameCanvas, PipeTop, PipeBottom);
+            moving.BirdMoving(GameCanvas, Bird, 5);
+            moving.IsColliding(Bird, PipeTop, PipeBottom);
         }
     }
 }

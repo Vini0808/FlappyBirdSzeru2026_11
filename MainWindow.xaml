@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Canvas x:Name="GameCanvas" Background="SkyBlue" Focusable="True">
-            <Rectangle x:Name="Bird" Width="30" Height="30" Fill="Yellow"/>
+            <Rectangle x:Name="Bird" Width="30" Height="30" Fill="Yellow" Canvas.Left="15" Canvas.Top="50"/>
             <Rectangle x:Name="PipeTop" Width="60" Height="200" Fill="Green" Canvas.Left="500" Canvas.Top="0"/>
             <Rectangle x:Name="PipeBottom" Width="60" Height="200" Fill="Green" Canvas.Left="500" Canvas.Top="350"/>
         </Canvas>
