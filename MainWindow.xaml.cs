@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
 using System.Windows.Threading;
 
 namespace FlappyBirdSzeru2026_11
@@ -29,7 +30,7 @@ namespace FlappyBirdSzeru2026_11
         private void GameLoop(object sender, EventArgs e)
         {
             Moving moving = new Moving();
-            moving.PipeMoving();
+            moving.PipeMoving(GameCanvas, PipeTop, PipeBottom);
         }
     }
 }

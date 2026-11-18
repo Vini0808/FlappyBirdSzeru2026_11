@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Shapes;
 
 namespace FlappyBirdSzeru2026_11
 {
-    internal class Moving : MainWindow
+    internal class Moving
     {
         private double pipeSpeed = 5;
         private Random rnd = new Random();
-        public void PipeMoving()
+        public void PipeMoving(Canvas canvas, Rectangle pipeTop, Rectangle pipeBottom)
         {
-            double x = Canvas.GetLeft(PipeTop) - pipeSpeed;
+            double x = Canvas.GetLeft(pipeTop) - pipeSpeed;
 
-            if (x + PipeTop.Width < 0)
+            if (x + pipeTop.Width < 0)
             {
-                x = GameCanvas.ActualWidth;
+                x = canvas.ActualWidth;
                 double gapY = rnd.Next(50, 250);
-                PipeTop.Height = gapY;
-                Canvas.SetTop(PipeBottom, gapY + 150);
-                PipeBottom.Height = GameCanvas.ActualHeight - (gapY + 150);
+                pipeTop.Height = gapY;
+                Canvas.SetTop(pipeBottom, gapY + 150);
+                pipeBottom.Height = canvas.ActualHeight - (gapY + 150);
             }
 
-            Canvas.SetLeft(PipeTop, x);
-            Canvas.SetLeft(PipeBottom, x);
+            Canvas.SetLeft(pipeTop, x);
+            Canvas.SetLeft(pipeBottom, x);
         }
     }
 }
